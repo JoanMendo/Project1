@@ -61,7 +61,7 @@ public class CharacterMovement : MonoBehaviour
         temporalBackTrail = Instantiate(originalTrail);
         temporalBackTrail.GetComponent<TrailRenderer>().startColor = Color.black;
         temporalBackTrail.GetComponent<TrailRenderer>().endColor = Color.black;
-        temporalBackTrail.GetComponent<TrailRenderer>().widthMultiplier = 2f;
+        temporalBackTrail.GetComponent<TrailRenderer>().widthMultiplier *= 1.15f;
         temporalBackTrail.GetComponent<TrailRenderer>().sortingOrder = 4;
         temporalTrail.GetComponent<TrailRenderer>().emitting = true;
         temporalBackTrail.GetComponent<TrailRenderer>().emitting = true;
