@@ -57,8 +57,10 @@ public class CharacterMovement : MonoBehaviour
         }
         
         temporalTrail = Instantiate(originalTrail);
+        temporalTrail.name = "Mondongo";
         originalTrail = temporalTrail;
         temporalBackTrail = Instantiate(originalTrail);
+        temporalBackTrail.name = "Mondongo";
         temporalBackTrail.GetComponent<TrailRenderer>().startColor = Color.black;
         temporalBackTrail.GetComponent<TrailRenderer>().endColor = Color.black;
         temporalBackTrail.GetComponent<TrailRenderer>().widthMultiplier *= 1.15f;
@@ -74,6 +76,7 @@ public class CharacterMovement : MonoBehaviour
     public void Die()
     {
         CreateTrail();
+        StartCoroutine(respawnFreeze());
         transform.position = respawnPosition.transform.position;
 
     }
@@ -84,6 +87,15 @@ public class CharacterMovement : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public IEnumerator respawnFreeze()
+    {
+
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(0.5f);
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
 }
