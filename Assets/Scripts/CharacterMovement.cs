@@ -10,10 +10,10 @@ public class CharacterMovement : MonoBehaviour
     private Vector2 movement;
     private float inputX;
     private float inputY;
-    private GameObject originalTrail;
+    //private GameObject originalTrail;
     public string trailName;
-    private GameObject temporalTrail;
-    private GameObject temporalBackTrail;
+   // private GameObject temporalTrail;
+    //private GameObject temporalBackTrail;
     private Queue queue;
     private Vector2 lastOffset;
 
@@ -21,9 +21,9 @@ public class CharacterMovement : MonoBehaviour
     {
         queue = new Queue();
         rb = GetComponent<Rigidbody2D>();
-        originalTrail = GameObject.Find(trailName);
+       /* originalTrail = GameObject.Find(trailName);
         originalTrail.transform.position = transform.position;
-        CreateTrail();
+        CreateTrail();*/
         
     }
 
@@ -41,10 +41,11 @@ public class CharacterMovement : MonoBehaviour
         }
         
 
-        temporalTrail.transform.position = transform.position;
-        temporalBackTrail.transform.position = (Vector2)transform.position + lastOffset;
+       /* temporalTrail.transform.position = transform.position;
+        temporalBackTrail.transform.position = (Vector2)transform.position + lastOffset; */
     }
 
+    /*
     public void CreateTrail()
     {
         if (queue.Count >= 10)
@@ -71,11 +72,11 @@ public class CharacterMovement : MonoBehaviour
         queue.Enqueue(temporalBackTrail);
 
         
-    }
+    } */
 
     public void Die()
     {
-        CreateTrail();
+        //CreateTrail();
         StartCoroutine(respawnFreeze());
         transform.position = respawnPosition.transform.position;
 
