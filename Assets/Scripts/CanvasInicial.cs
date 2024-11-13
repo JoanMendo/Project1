@@ -13,7 +13,7 @@ public class CanvasInicial : MonoBehaviour
     public GameObject NameInput;
     public GameObject AgeInput;
     public GameObject Player;
-    public Light2D light2D;
+    public GameObject light2D;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class CanvasInicial : MonoBehaviour
         if (Name != "" && parsedAge > 0)
         {
 
-            light2D.pointLightOuterRadius = 0;
+            light2D.SetActive(false);
             Inputs.SetActive(false);
             StartCoroutine(SetPlayerActive());
         }
@@ -54,6 +54,8 @@ public class CanvasInicial : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         Player.SetActive(true);
+        light2D.SetActive(true);
+
     }
     
 
