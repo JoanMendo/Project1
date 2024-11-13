@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &262981784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262981783}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -2114,16 +2114,6 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 1
       m_TileSpriteIndex: 3
-      m_TileMatrixIndex: 4
-      m_TileColorIndex: 4
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -5, y: -11, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 16
-      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 4
       m_TileColorIndex: 4
       m_TileObjectToInstantiateIndex: 65535
@@ -6323,7 +6313,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: fd3769dfb270f414998e5f3fcda6b7bd, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: ed663188bc603c7489711408c315d11e, type: 2}
-  - m_RefCount: 6
+  - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 945a906d50888bf45b434a3404bfed8b, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 18
@@ -6358,7 +6348,7 @@ Tilemap:
     m_Data: {fileID: 1609998455, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -1885621438, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
-  - m_RefCount: 6
+  - m_RefCount: 5
     m_Data: {fileID: -1539967158, guid: a31dd5fd8333c9d468dbe6c7f19a8fe7, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 0
@@ -6433,7 +6423,7 @@ Tilemap:
       e31: 0
       e32: 4.5905e-41
       e33: 0
-  - m_RefCount: 579
+  - m_RefCount: 578
     m_Data:
       e00: 1
       e01: 0
@@ -6460,7 +6450,7 @@ Tilemap:
     m_Data: {r: 3.8967e-41, g: 3.8967e-41, b: 3.8967e-41, a: 3.8967e-41}
   - m_RefCount: 0
     m_Data: {r: 3.8967e-41, g: 3.8967e-41, b: 3.8967e-41, a: 3.8967e-41}
-  - m_RefCount: 579
+  - m_RefCount: 578
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -7025,14 +7015,6 @@ CompositeCollider2D:
         Y: -100000000
       - X: 280000000
         Y: -100000000
-    - - X: -40000000
-        Y: -100000000
-      - X: -50000000
-        Y: -100000000
-      - X: -50000000
-        Y: -110000000
-      - X: -40000000
-        Y: -110000000
   m_CompositePaths:
     m_Paths:
     - - {x: 37.999973, y: -18}
@@ -7285,10 +7267,6 @@ CompositeCollider2D:
       - {x: 27.999971, y: -9}
       - {x: 24, y: -9.00003}
       - {x: 24.000029, y: -10}
-    - - {x: -4.000029, y: -11}
-      - {x: -4.000029, y: -10}
-      - {x: -5, y: -10.00003}
-      - {x: -4.999971, y: -11}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -8078,7 +8056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300350357}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.008167084, w: 0.9999667}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8102,7 +8080,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.16
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -8124,7 +8102,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 21.72
+  m_PointLightOuterRadius: 13
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

@@ -76,9 +76,9 @@ public class CharacterMovement : MonoBehaviour
 
     public void Die()
     {
-        //CreateTrail();
+        /*CreateTrail();
         StartCoroutine(respawnFreeze());
-        transform.position = respawnPosition.transform.position;
+        transform.position = respawnPosition.transform.position;*/
 
     }
 
