@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
+
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -25,15 +29,14 @@ public class CharacterMovement : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-       
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
 
     void Start()
     {
 
-        rb = GetComponent<Rigidbody2D>();
-
+        
         
 
 
@@ -81,9 +84,14 @@ public class CharacterMovement : MonoBehaviour
 
 
 
-    public void OnSceneLoaded()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+
+        Debug.Log("Scene loaded");
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn");
+        Die();
     }
+
+    
 
 }

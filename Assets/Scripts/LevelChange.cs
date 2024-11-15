@@ -17,10 +17,7 @@ public class LevelChange : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        
-            
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        player.GetComponent<CharacterMovement>().Die();
 
 
     }
