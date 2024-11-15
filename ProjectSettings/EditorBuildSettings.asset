@@ -6,6 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/EscenaInicial.unity
+    guid: ed9bb8d3f25e92f4899c918c0bbaa8c3
+  - enabled: 1
     path: Assets/Scenes/Nivel1-Deutranopia y Protanopia.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Nivel2-Protanopia.unity
+    guid: f21a7d2f28936aa4bba452ecd740e813
+  - enabled: 1
+    path: Assets/Scenes/Nivel3-DeutranopiaYProtanopia.unity
+    guid: 7aa94792148e5fe4e933b0bb8ba7270e
+  - enabled: 1
+    path: Assets/Scenes/Nivel4-Tritanopia.unity
+    guid: 89025e2d54a90ad408d3f1a4e0dc360c
+  - enabled: 1
+    path: Assets/Scenes/Nivel5-Tritanopia.unity
+    guid: 84f7ebc5a66e59a46a5e566ab2266b21
+  - enabled: 1
+    path: Assets/Scenes/Nivel6-Tritanopia.unity
+    guid: aea4d30a66f2f6e49ad59c03fe37cca8
+  - enabled: 1
+    path: Assets/Scenes/Nivel7 - Protanopia.unity
+    guid: c3f1a9a57b075454fa2d178617d307cb
+  - enabled: 1
+    path: Assets/Scenes/Nivel8 - Deutranopia.unity
+    guid: 0a9335c83739bb943a106a5a172aa6cc
+  - enabled: 1
+    path: Assets/Scenes/Nivel10 - Deuteranopia.unity
+    guid: d969242b8f14b7745a74b8825f529cb0
+  - enabled: 1
+    path: Assets/Scenes/Nivel9 - Tritanopia.unity
+    guid: 31284b3cf0346b14a8d1aa3b78f750d5
   m_configObjects: {}
