@@ -1,4 +1,4 @@
-# Project1
+# Proyecto 1 - Pantone
 
 Proyecto de test de daltonismo gamificado para generar un diagnóstico de manera cómoda y entretenida. 
 
