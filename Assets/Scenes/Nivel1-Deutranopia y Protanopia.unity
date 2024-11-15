@@ -807,7 +807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &756254751
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -916,7 +916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf0f6406491388418f0be9fee674a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light2D: {fileID: 0}
   speed: 10
   respawnPosition: {fileID: 1899781679}
 --- !u!61 &756254755
