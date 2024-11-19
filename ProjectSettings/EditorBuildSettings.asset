@@ -33,9 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Nivel8 - Deutranopia.unity
     guid: 0a9335c83739bb943a106a5a172aa6cc
   - enabled: 1
+    path: Assets/Scenes/Nivel9 - Tritanopia.unity
+    guid: 31284b3cf0346b14a8d1aa3b78f750d5
+  - enabled: 1
     path: Assets/Scenes/Nivel10 - Deuteranopia.unity
     guid: d969242b8f14b7745a74b8825f529cb0
   - enabled: 1
-    path: Assets/Scenes/Nivel9 - Tritanopia.unity
-    guid: 31284b3cf0346b14a8d1aa3b78f750d5
+    path: Assets/Scenes/Nivel11 - Protanopia.unity
+    guid: 915af4d11b759fc46abb074981b456c6
   m_configObjects: {}
