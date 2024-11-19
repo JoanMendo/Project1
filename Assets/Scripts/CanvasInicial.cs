@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -16,17 +17,8 @@ public class CanvasInicial : MonoBehaviour
     public GameObject light2D;
     public GameObject lightSalida;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool validName;
+    private bool validAge;
 
     public void StartButton()
     {
@@ -38,9 +30,26 @@ public class CanvasInicial : MonoBehaviour
     {
 
         Name = NameInput.GetComponent<TMPro.TMP_InputField>().text;
-         Age = int.TryParse(AgeInput.GetComponent<TMPro.TMP_InputField>().text, out int parsedAge);
+        Age = int.TryParse(AgeInput.GetComponent<TMPro.TMP_InputField>().text, out int parsedAge);
 
-        if (Name != "" && parsedAge > 0)
+        if (Name.Length > 1)
+        {
+            validName = true;
+        }
+        else
+        {
+            NameInput.GetComponent<TMPro.TMP_InputField>().text = "Invalid Name";
+        }
+
+        if(Age && parsedAge > 0 && parsedAge < 100)
+        {
+            validAge = true;
+        }
+        else
+        {
+            AgeInput.GetComponent<TMPro.TMP_InputField>().text = "Invalid Age";
+        }
+        if (validAge && validName)
         {
 
             light2D.SetActive(false);
