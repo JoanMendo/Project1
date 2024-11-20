@@ -51,7 +51,8 @@ public class CanvasInicial : MonoBehaviour
         }
         if (validAge && validName)
         {
-
+            ApiRequest.instance.age = parsedAge;
+            ApiRequest.instance.name = Name;
             light2D.SetActive(false);
             Inputs.SetActive(false);
             StartCoroutine(SetPlayerActive());
