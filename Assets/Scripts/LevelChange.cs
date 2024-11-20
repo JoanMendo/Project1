@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelChange : MonoBehaviour
 {
     public GameObject player;
+    public int level;
+    public int exit;
 
     public void Start()
     {
@@ -17,7 +19,17 @@ public class LevelChange : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        try
+        {
+            ApiRequest.instance.times[level] = Time.time;
+            ApiRequest.instance.exits[level] = exit;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        catch
+        {
+            ApiRequest.instance.StartCoroutine(ApiRequest.instance.SendPostRequest());
+        }
+        
 
 
     }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float life = 4f;
+    public float life = 2.5f;
     public float speed = 5f;
     public GameObject respawnPosition;
 
@@ -78,6 +78,7 @@ public class CharacterMovement : MonoBehaviour
         if (lifeTime >= life)
         {
             lifeTime = 0;
+            ApiRequest.instance.deaths[SceneManager.GetActiveScene().buildIndex] += 1;
             Die();
         }
     }

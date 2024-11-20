@@ -6,28 +6,36 @@ using UnityEngine.Networking;
 
 public class ApiRequest : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static ApiRequest instance;
+    public int age;
+    public int[] exits = new int[12];
+    public float[] times = new float[12];
+    public int[] deaths = new int[12];
+
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+
     void Start()
     {
         // Call the method to send the request
         StartCoroutine(SendPostRequest());
     }
 
-    IEnumerator SendPostRequest()
+    public IEnumerator SendPostRequest()
     {
         // Create random data
         int gender = Random.Range(0, 3); // Random gender between 0, 1, 2
-        int age = Random.Range(1, 100);  // Random age between 1 and 99
-        int[] exits = new int[4];
-        float[] times = new float[] { 10.5f, 80.12f, 54.44f, 76.10f };
-        int[] deaths = new int[4];
-
-        // Populate exits and deaths with random values
-        for (int i = 0; i < 4; i++)
-        {
-            exits[i] = Random.Range(1, 3); // Random exits (1 or 2)
-            deaths[i] = Random.Range(0, 6); // Random deaths (0 to 5)
-        }
 
         // Print the data to console for debugging
         Debug.Log("Data: ");
