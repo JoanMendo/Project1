@@ -16,6 +16,7 @@ public class CanvasInicial : MonoBehaviour
     public GameObject Player;
     public GameObject light2D;
     public GameObject lightSalida;
+    public GameObject instrucciones;
 
     private bool validName;
     private bool validAge;
@@ -66,7 +67,7 @@ public class CanvasInicial : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Player.SetActive(true);
         lightSalida.SetActive(true);
-
+        instrucciones.SetActive(true);
     }
     
 
