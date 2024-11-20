@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -8,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-
+    public float life = 4f;
     public float speed = 5f;
     public GameObject respawnPosition;
+
+    private float lifeTime = 0f;
     private Vector2 movement;
     private float inputX;
     private float inputY;
@@ -33,15 +34,6 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    void Start()
-    {
-
-        
-        
-
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -50,26 +42,15 @@ public class CharacterMovement : MonoBehaviour
         movement = new Vector2(inputX, inputY).normalized;
         rb.velocity = movement * speed;
 
-
     }
-
-
     public void Die()
     {
-
-        StartCoroutine(respawnFreeze());
         transform.position = respawnPosition.transform.position;
-
-
+        StartCoroutine(respawnFreeze());
+        
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Terrain")
-        {
-            //Die();
-        }
-    }
+    
 
     public IEnumerator respawnFreeze()
     {
@@ -81,9 +62,6 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-
-
-
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
 
@@ -92,6 +70,16 @@ public class CharacterMovement : MonoBehaviour
         Die();
     }
 
-    
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        lifeTime += Time.deltaTime;
+        Debug.Log(lifeTime);
+
+        if (lifeTime >= life)
+        {
+            lifeTime = 0;
+            Die();
+        }
+    }
 
 }
