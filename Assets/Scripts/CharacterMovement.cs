@@ -10,8 +10,10 @@ public class CharacterMovement : MonoBehaviour
     public float life = 2.5f;
     public float speed = 5f;
     public GameObject respawnPosition;
+    public GameObject lifeRectangle;
 
     private float lifeTime = 0f;
+    private Vector3 initialScale;
     private Vector2 movement;
     private float inputX;
     private float inputY;
@@ -20,6 +22,7 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        initialScale = lifeRectangle.transform.localScale;
 
         if (instance != null && instance != this)
         {
@@ -41,6 +44,17 @@ public class CharacterMovement : MonoBehaviour
         inputY = Input.GetAxisRaw("Vertical");
         movement = new Vector2(inputX, inputY).normalized;
         rb.velocity = movement * speed;
+        lifeRectangle.transform.localScale = new Vector3(initialScale.x * (life - lifeTime) / life, initialScale.y, initialScale.z);
+
+        //Que se le regenere la vida
+        if (lifeTime > 0)
+        {
+            lifeTime -= Time.deltaTime/4;
+        }
+        
+
+
+
 
     }
     public void Die()
