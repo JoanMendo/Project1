@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf0f6406491388418f0be9fee674a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 4
+  life: 2.5
   speed: 12
   respawnPosition: {fileID: 1344769437}
   lifeRectangle: {fileID: 587530051}
@@ -6512,7 +6512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1706985422
 MonoBehaviour:
   m_ObjectHideFlags: 0

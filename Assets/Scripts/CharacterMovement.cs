@@ -49,7 +49,7 @@ public class CharacterMovement : MonoBehaviour
         //Que se le regenere la vida
         if (lifeTime > 0)
         {
-            lifeTime -= Time.deltaTime/2.5f;
+            lifeTime -= Time.deltaTime/4;
         }
         
 
