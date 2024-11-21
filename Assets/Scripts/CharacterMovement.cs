@@ -10,10 +10,9 @@ public class CharacterMovement : MonoBehaviour
     public float life = 2.5f;
     public float speed = 5f;
     public GameObject respawnPosition;
-    public GameObject lifeRectangle;
+    public HealthManager healthManager;
 
     private float lifeTime = 0f;
-    private Vector3 initialScale;
     private Vector2 movement;
     private float inputX;
     private float inputY;
@@ -21,8 +20,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void Awake()
     {
+        healthManager = GameObject.FindGameObjectWithTag("Interface").GetComponent<HealthManager>();
         rb = GetComponent<Rigidbody2D>();
-        initialScale = lifeRectangle.transform.localScale;
 
         if (instance != null && instance != this)
         {
@@ -44,8 +43,7 @@ public class CharacterMovement : MonoBehaviour
         inputY = Input.GetAxisRaw("Vertical");
         movement = new Vector2(inputX, inputY).normalized;
         rb.velocity = movement * speed;
-        lifeRectangle.transform.localScale = new Vector3(initialScale.x * (life - lifeTime) / life, initialScale.y, initialScale.z);
-
+        healthManager.ChangeHealthBar(lifeTime);
         //Que se le regenere la vida
         if (lifeTime > 0)
         {
@@ -86,6 +84,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        
         lifeTime += Time.deltaTime;
         Debug.Log(lifeTime);
 
