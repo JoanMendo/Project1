@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,8 +26,9 @@ public class LevelChange : MonoBehaviour
             ApiRequest.instance.exits[level] = exit;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        catch
+        catch (Exception e)
         {
+            Debug.Log(e.ToString());
             ApiRequest.instance.StartCoroutine(ApiRequest.instance.SendPostRequest());
         }
         
