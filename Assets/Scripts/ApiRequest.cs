@@ -26,55 +26,59 @@ public class ApiRequest : MonoBehaviour
         }
     }
 
+    /*
     void Start()
     {
         // Call the method to send the request
         StartCoroutine(SendPostRequest());
     }
+    */
 
     public IEnumerator SendPostRequest()
     {
-        // Create random data
-        int gender = Random.Range(0, 3); // Random gender between 0, 1, 2
+        // Crear datos aleatorios
+        int gender = Random.Range(0, 3); // Genero aleatorio entre 0, 1, 2
 
-        // Print the data to console for debugging
+        // Debug de datos
         Debug.Log("Data: ");
         Debug.Log($"Gender: {gender}, Age: {age}");
         Debug.Log($"Exits: {string.Join(", ", exits)}");
         Debug.Log($"Times: {string.Join(", ", times)}");
         Debug.Log($"Deaths: {string.Join(", ", deaths)}");
 
-        // Construct the URL and parameters for the POST request
+        // Construir la URL y parámetros
         string url = "http://127.0.0.1:5000/api/v1/results";
+
+        // Codificar los datos como parámetros
         string exitsStr = string.Join(",", exits);
         string timesStr = string.Join(",", times);
         string deathsStr = string.Join(",", deaths);
 
-        // Create a WWWForm to send the parameters
-        WWWForm form = new WWWForm();
-        form.AddField("gender", gender.ToString());
-        form.AddField("age", age.ToString());
-        form.AddField("exits", exitsStr);
-        form.AddField("times", timesStr);
-        form.AddField("deaths", deathsStr);
+        string queryString = $"?gender={gender}&age={age}&exits={UnityWebRequest.EscapeURL(exitsStr)}&times={UnityWebRequest.EscapeURL(timesStr)}&deaths={UnityWebRequest.EscapeURL(deathsStr)}";
 
-        // Send the POST request
-        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
+        // Combinar la URL base con los parámetros
+        string fullUrl = url + queryString;
+
+        Debug.Log("Request URL: " + fullUrl);
+
+        // Enviar la solicitud GET (o POST si es necesario con un body vacío)
+        using (UnityWebRequest www = UnityWebRequest.Post(fullUrl, "")) // También puedes usar UnityWebRequest.Post con URL vacía
         {
-            // Wait until the request is completed
+            // Esperar la respuesta
             yield return www.SendWebRequest();
 
-            // Check for errors
+            // Verificar errores
             if (www.result == UnityWebRequest.Result.Success)
             {
-                // If the request was successful, print the response
+                // Respuesta exitosa
                 Debug.Log("Response: " + www.downloadHandler.text);
             }
             else
             {
-                // If there was an error, print the error message
+                // Manejar errores
                 Debug.LogError("Error: " + www.error);
             }
         }
     }
+
 }
