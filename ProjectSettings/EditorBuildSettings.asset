@@ -42,6 +42,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Nivel11 - Protanopia.unity
     guid: 915af4d11b759fc46abb074981b456c6
   - enabled: 1
-    path: Assets/Scenes/Nivel12 - Deuteranopia.unity
+    path: Assets/Scenes/Nivel12 - Protanopia.unity
     guid: 9cae22694eac0df41ab7a24f366013e0
   m_configObjects: {}

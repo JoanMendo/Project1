@@ -76,14 +76,18 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        
-        lifeTime -= Time.deltaTime;
-
-        if (lifeTime <= 0)
+        if (collision.gameObject.tag == "Terrain")
         {
-            lifeTime = 0.5f;
-            ApiRequest.instance.deaths[SceneManager.GetActiveScene().buildIndex] += 1;
-            Die();
+            lifeTime -= Time.deltaTime;
+
+            lifeTime -= Time.deltaTime;
+
+            if (lifeTime <= 0)
+            {
+                lifeTime = 0.5f;
+                ApiRequest.instance.deaths[SceneManager.GetActiveScene().buildIndex] += 1;
+                Die();
+            }
         }
     }
 
