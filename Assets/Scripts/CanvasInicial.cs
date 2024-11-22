@@ -17,8 +17,7 @@ public class CanvasInicial : MonoBehaviour
     public GameObject Player;
     public GameObject light2D;
     public GameObject lightSalida;
-    public GameObject lightInstrucciones;
-    public GameObject instrucciones;
+
     private bool validAge;
 
     public void StartButton()
@@ -61,9 +60,9 @@ public class CanvasInicial : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         Player.SetActive(true);
-        lightSalida.SetActive(true);
-        lightInstrucciones.SetActive(true);
-        instrucciones.SetActive(true);
+        light2D.GetComponent<Light2D>().pointLightOuterRadius = 0.5f;
+        light2D.SetActive(true);
+
     }
     
 

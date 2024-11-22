@@ -10217,6 +10217,7 @@ MonoBehaviour:
   life: 2.5
   speed: 5
   respawnPosition: {fileID: 1899781679}
+  healthManager: {fileID: 0}
 --- !u!61 &756254755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10528,7 +10529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   level: 3
-  exit: 0
+  exit: 1
 --- !u!66 &1081882418
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -10820,7 +10821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   level: 3
-  exit: 1
+  exit: 2
 --- !u!483693784 &1125202261
 TilemapRenderer:
   m_ObjectHideFlags: 0

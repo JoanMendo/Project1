@@ -255,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   level: 11
-  exit: 1
+  exit: 2
 --- !u!19719996 &346658793
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -10028,6 +10028,7 @@ MonoBehaviour:
   life: 2.5
   speed: 10
   respawnPosition: {fileID: 1899781679}
+  healthManager: {fileID: 0}
 --- !u!50 &870710840
 Rigidbody2D:
   serializedVersion: 4
@@ -10580,7 +10581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   level: 11
-  exit: 0
+  exit: 1
 --- !u!19719996 &1081882418
 TilemapCollider2D:
   m_ObjectHideFlags: 0
