@@ -46,23 +46,23 @@ public class ApiRequest : MonoBehaviour
         Debug.Log($"Times: {string.Join(", ", times)}");
         Debug.Log($"Deaths: {string.Join(", ", deaths)}");
 
-        // Construir la URL y parámetros
+        // Construir la URL y parï¿½metros
         string url = "http://127.0.0.1:5000/api/v1/results";
 
-        // Codificar los datos como parámetros
+        // Codificar los datos como parï¿½metros
         string exitsStr = string.Join(",", exits);
         string timesStr = string.Join(",", times);
         string deathsStr = string.Join(",", deaths);
 
         string queryString = $"?gender={gender}&age={age}&exits={UnityWebRequest.EscapeURL(exitsStr)}&times={UnityWebRequest.EscapeURL(timesStr)}&deaths={UnityWebRequest.EscapeURL(deathsStr)}";
 
-        // Combinar la URL base con los parámetros
+        // Combinar la URL base con los parï¿½metros
         string fullUrl = url + queryString;
 
         Debug.Log("Request URL: " + fullUrl);
 
-        // Enviar la solicitud GET (o POST si es necesario con un body vacío)
-        using (UnityWebRequest www = UnityWebRequest.Post(fullUrl, "")) // También puedes usar UnityWebRequest.Post con URL vacía
+        // Enviar la solicitud GET (o POST si es necesario con un body vacï¿½o)
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(fullUrl, "")) // Tambiï¿½n puedes usar UnityWebRequest.Post con URL vacï¿½a
         {
             // Esperar la respuesta
             yield return www.SendWebRequest();
