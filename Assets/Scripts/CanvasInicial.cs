@@ -1,24 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class CanvasInicial : MonoBehaviour
 {
 
-    private string Name;
+    private int Gender;
     private bool Age;
     public GameObject PlayButton;
     public GameObject Inputs;
-    public GameObject NameInput;
+    public GameObject GenderInput;
     public GameObject AgeInput;
     public GameObject Player;
     public GameObject light2D;
     public GameObject lightSalida;
+    public GameObject lightInstrucciones;
     public GameObject instrucciones;
-
-    private bool validName;
     private bool validAge;
 
     public void StartButton()
@@ -30,17 +30,12 @@ public class CanvasInicial : MonoBehaviour
     public void CheckInputs()
     {
 
-        Name = NameInput.GetComponent<TMPro.TMP_InputField>().text;
+        //Define el gender que es un input donde tienes 3 opciones a seleccionar
+        Gender = GenderInput.GetComponent<TMPro.TMP_Dropdown>().value;
+        
         Age = int.TryParse(AgeInput.GetComponent<TMPro.TMP_InputField>().text, out int parsedAge);
 
-        if (Name.Length > 1)
-        {
-            validName = true;
-        }
-        else
-        {
-            NameInput.GetComponent<TMPro.TMP_InputField>().text = "Invalid Name";
-        }
+        
 
         if(Age && parsedAge > 0 && parsedAge < 100)
         {
@@ -50,10 +45,10 @@ public class CanvasInicial : MonoBehaviour
         {
             AgeInput.GetComponent<TMPro.TMP_InputField>().text = "Invalid Age";
         }
-        if (validAge && validName)
+        if (validAge)
         {
             ApiRequest.instance.age = parsedAge;
-            ApiRequest.instance.name = Name;
+            ApiRequest.instance.gender = Gender;
             light2D.SetActive(false);
             Inputs.SetActive(false);
             StartCoroutine(SetPlayerActive());
@@ -67,6 +62,7 @@ public class CanvasInicial : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Player.SetActive(true);
         lightSalida.SetActive(true);
+        lightInstrucciones.SetActive(true);
         instrucciones.SetActive(true);
     }
     

@@ -82,6 +82,7 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Scene loaded");
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn");
         Die();
+        GetComponentInChildren<Light2D>().pointLightOuterRadius = 0;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
