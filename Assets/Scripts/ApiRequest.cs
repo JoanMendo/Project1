@@ -27,13 +27,7 @@ public class ApiRequest : MonoBehaviour
         }
     }
 
-    /*
-    void Start()
-    {
-        // Call the method to send the request
-        StartCoroutine(SendPostRequest());
-    }
-    */
+   
 
     public IEnumerator SendPostRequest()
     {
@@ -46,10 +40,9 @@ public class ApiRequest : MonoBehaviour
         Debug.Log($"Times: {string.Join(", ", times)}");
         Debug.Log($"Deaths: {string.Join(", ", deaths)}");
 
-        // Construir la URL y par�metros
+
         string url = "http://127.0.0.1:5000/api/v1/results";
 
-        // Codificar los datos como par�metros
         string exitsStr = string.Join(",", exits);
         string timesStr = string.Join(",", times);
         string deathsStr = string.Join(",", deaths);
@@ -61,8 +54,8 @@ public class ApiRequest : MonoBehaviour
 
         Debug.Log("Request URL: " + fullUrl);
 
-        // Enviar la solicitud GET (o POST si es necesario con un body vac�o)
-        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(fullUrl, "")) // Tambi�n puedes usar UnityWebRequest.Post con URL vac�a
+
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(fullUrl, "")) 
         {
             // Esperar la respuesta
             yield return www.SendWebRequest();
