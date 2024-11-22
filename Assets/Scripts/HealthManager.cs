@@ -11,7 +11,7 @@ public class HealthManager : MonoBehaviour
     public void ChangeHealthBar(float currentHealth)
     {
 
-        healthBar.fillAmount = currentHealth / 100;
+        healthBar.fillAmount =  currentHealth / 0.5f;
 
     }
 
