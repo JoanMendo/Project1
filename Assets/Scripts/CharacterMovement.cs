@@ -7,12 +7,11 @@ using UnityEngine.SceneManagement;
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float life = 2.5f;
     public float speed = 5f;
     public GameObject respawnPosition;
     public HealthManager healthManager;
 
-    private float lifeTime = 0f;
+    private float lifeTime = 0.5f;
     private Vector2 movement;
     private float inputX;
     private float inputY;
@@ -43,11 +42,13 @@ public class CharacterMovement : MonoBehaviour
         inputY = Input.GetAxisRaw("Vertical");
         movement = new Vector2(inputX, inputY).normalized;
         rb.velocity = movement * speed;
+
         healthManager.ChangeHealthBar(lifeTime);
+        
         //Que se le regenere la vida
-        if (lifeTime > 0)
+        if (lifeTime < 0.5)
         {
-            lifeTime -= Time.deltaTime/4;
+            lifeTime += Time.deltaTime/4;
         }
         
 
@@ -58,6 +59,7 @@ public class CharacterMovement : MonoBehaviour
     public void Die()
     {
         transform.position = respawnPosition.transform.position;
+        Debug.Log("You died");
         StartCoroutine(respawnFreeze());
         
     }
@@ -80,17 +82,18 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Scene loaded");
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn");
         Die();
+        GetComponentInChildren<Light2D>().pointLightOuterRadius = 0;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         
-        lifeTime += Time.deltaTime;
+        lifeTime -= Time.deltaTime;
         Debug.Log(lifeTime);
 
-        if (lifeTime >= life)
+        if (lifeTime <= 0)
         {
-            lifeTime = 0;
+            lifeTime = 0.5f;
             ApiRequest.instance.deaths[SceneManager.GetActiveScene().buildIndex] += 1;
             Die();
         }
