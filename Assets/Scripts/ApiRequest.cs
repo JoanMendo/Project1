@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 public class ApiRequest : MonoBehaviour
 {
     public static ApiRequest instance;
+    public int gender;
     public int age;
     public int[] exits = new int[12];
     public float[] times = new float[12];
@@ -36,8 +37,7 @@ public class ApiRequest : MonoBehaviour
 
     public IEnumerator SendPostRequest()
     {
-        // Crear datos aleatorios
-        int gender = Random.Range(0, 3); // Genero aleatorio entre 0, 1, 2
+
 
         // Debug de datos
         Debug.Log("Data: ");
