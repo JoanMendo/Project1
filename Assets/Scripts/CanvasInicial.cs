@@ -10,6 +10,7 @@ public class CanvasInicial : MonoBehaviour
 
     private int Gender;
     private bool Age;
+    public GameObject levelInterface;
     public GameObject PlayButton;
     public GameObject Inputs;
     public GameObject GenderInput;
@@ -59,6 +60,7 @@ public class CanvasInicial : MonoBehaviour
     {
 
         yield return new WaitForSeconds(1f);
+        levelInterface.SetActive(true);
         Player.SetActive(true);
         light2D.GetComponent<Light2D>().pointLightOuterRadius = 0.5f;
         light2D.SetActive(true);

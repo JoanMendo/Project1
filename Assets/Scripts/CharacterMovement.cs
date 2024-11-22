@@ -19,7 +19,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Awake()
     {
-        healthManager = GameObject.FindGameObjectWithTag("Interface").GetComponent<HealthManager>();
+        
         rb = GetComponent<Rigidbody2D>();
 
         if (instance != null && instance != this)
@@ -44,24 +44,12 @@ public class CharacterMovement : MonoBehaviour
         rb.velocity = movement * speed;
 
         healthManager.ChangeHealthBar(lifeTime);
-        
-        //Que se le regenere la vida
-        if (lifeTime < 0.5)
-        {
-            lifeTime += Time.deltaTime/4;
-        }
-        
-
-
-
 
     }
     public void Die()
     {
         transform.position = respawnPosition.transform.position;
-        Debug.Log("You died");
         StartCoroutine(respawnFreeze());
-        
     }
 
     
@@ -78,7 +66,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
+        lifeTime = 0.5f;
+        healthManager = GameObject.FindGameObjectWithTag("Interface").GetComponent<HealthManager>();
         Debug.Log("Scene loaded");
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn");
         Die();
@@ -89,7 +78,6 @@ public class CharacterMovement : MonoBehaviour
     {
         
         lifeTime -= Time.deltaTime;
-        Debug.Log(lifeTime);
 
         if (lifeTime <= 0)
         {
