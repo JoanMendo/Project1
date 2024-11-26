@@ -7,16 +7,23 @@ using UnityEngine.SceneManagement;
 public class LevelChange : MonoBehaviour
 {
     public GameObject player;
+    public Canvas playerInterface;
     public int level;
     public int exit;
 
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Personaje");
+        playerInterface = GameObject.FindGameObjectWithTag("Interface").GetComponent<Canvas>();
+
+        UpdateInterface();
     }
 
-
-
+    public void UpdateInterface()
+    {
+        Debug.Log("Eyo");
+        playerInterface.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = "Nivel " + level;
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {

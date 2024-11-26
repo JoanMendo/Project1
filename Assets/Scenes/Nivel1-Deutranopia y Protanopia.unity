@@ -7625,7 +7625,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8375,7 +8375,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 21
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8695,7 +8695,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 16
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9065,7 +9065,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9655,7 +9655,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9714,18 +9714,18 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 2124987710, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 106
     m_Data: {fileID: 413709235, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 1030480572, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1762619285, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -51681770, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 42
     m_Data: {fileID: 45461593, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
   - m_RefCount: 2
@@ -9744,20 +9744,20 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 375132445, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 2124987710, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1271630285, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 375132445, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+    m_Data: {fileID: 1762619285, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -51681770, guid: 5b8beceedf318204c8b53a185bb377d2, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1534464516, guid: 8dbbb9181662c0542a5fb972f95c4b85, type: 3}
   m_TileMatrixArray:
@@ -9940,8 +9940,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3629334834526727407, guid: 3ff6cdef187b6d5408b1b597cb7faf83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7034715827257870334}
   m_SourcePrefab: {fileID: 100100000, guid: 3ff6cdef187b6d5408b1b597cb7faf83, type: 3}
+--- !u!1 &7034715827257870333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3629334834526727407, guid: 3ff6cdef187b6d5408b1b597cb7faf83, type: 3}
+  m_PrefabInstance: {fileID: 7034715827257870332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7034715827257870334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034715827257870333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3517caf82104c4cb8ba97a511055fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
