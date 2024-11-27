@@ -20,14 +20,14 @@ public class PauseButtonScript : MonoBehaviour
 
     public void ButtonPresed()
     {
-        Canvas.SetActive(true);
+        Canvas.GetComponent<Canvas>().enabled = true;
         PauseButton.SetActive(false);
         Time.timeScale = 0;
     }
 
     public void ButtonUnPressed()
     {
-        Canvas.SetActive(false);
+        Canvas.GetComponent<Canvas>().enabled = false;
         PauseButton.SetActive(true);
         Time.timeScale = 1;
     }

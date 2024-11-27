@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResetScript : MonoBehaviour
 {
@@ -9,12 +10,10 @@ public class ResetScript : MonoBehaviour
 
     public void ButtonPresed()
     {
-        Canvas.SetActive(true);
-        PauseButton.SetActive(false);
-        Time.timeScale = 0;
+        SceneManager.LoadScene("EscenaInicial");
     }
 
-    public void ButtonUnPressed()
+    public void ButtonPressed()
     {
         Canvas.SetActive(false);
         PauseButton.SetActive(true);

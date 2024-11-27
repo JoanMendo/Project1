@@ -18,6 +18,7 @@ public class CanvasInicial : MonoBehaviour
     public GameObject Player;
     public GameObject light2D;
     public GameObject lightSalida;
+    public GameObject botonPause;
 
     private bool validAge;
 
@@ -51,6 +52,7 @@ public class CanvasInicial : MonoBehaviour
             ApiRequest.instance.gender = Gender;
             light2D.SetActive(false);
             Inputs.SetActive(false);
+            botonPause.SetActive(true);
             StartCoroutine(SetPlayerActive());
         }
 
