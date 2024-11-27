@@ -398,8 +398,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerInterface: {fileID: 0}
   level: 8
   exit: 2
+  Protanopia: 0
+  Deuteranopia: 2
+  Tritanopia: 0
 --- !u!483693784 &286745423
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -9972,8 +9976,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerInterface: {fileID: 0}
   level: 8
   exit: 1
+  Protanopia: 0
+  Deuteranopia: 0
+  Tritanopia: 0
 --- !u!19719996 &1081882418
 TilemapCollider2D:
   m_ObjectHideFlags: 0
