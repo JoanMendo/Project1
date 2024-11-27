@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseButtonScript : MonoBehaviour
 {
     public GameObject Canvas;
     public GameObject PauseButton;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +19,21 @@ public class PauseButtonScript : MonoBehaviour
     {
         
     }
+    public void ResetButtonPresed()
+    {
+        PauseButton.SetActive(false);
+        Destroy(player);
+        SceneManager.LoadScene("EscenaInicial");
+    }
 
-    public void ButtonPresed()
+    public void PauseButtonPressed()
     {
         Canvas.GetComponent<Canvas>().enabled = true;
         PauseButton.SetActive(false);
         Time.timeScale = 0;
     }
 
-    public void ButtonUnPressed()
+    public void PauseButtonUnPressed()
     {
         Canvas.GetComponent<Canvas>().enabled = false;
         PauseButton.SetActive(true);
