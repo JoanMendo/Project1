@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel12 - Protanopia.unity
     guid: 9cae22694eac0df41ab7a24f366013e0
+  - enabled: 1
+    path: Assets/Scenes/EscenaFinal.unity
+    guid: 5db6b9b56d168d54b93c0c550808ff0f
   m_configObjects: {}
