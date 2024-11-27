@@ -22,6 +22,11 @@ public class LevelChange : MonoBehaviour
         UpdateInterface();
     }
 
+    public void UpdateInterface()
+    {
+        playerInterface.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = "Nivel " + level;
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         try

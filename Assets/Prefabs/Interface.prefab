@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 3705690511508215714}
   - component: {fileID: 6862212243589099956}
   - component: {fileID: 7792092765507704353}
+  - component: {fileID: 5159315775839700168}
   m_Layer: 5
   m_Name: Interface
   m_TagString: Untagged
@@ -404,6 +405,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 5104809855058458112}
+--- !u!114 &5159315775839700168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3629334834526727407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fa56add3aa0714e9c78b0586d817fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 4337881473755267063}
 --- !u!1 &5318135473891055637
 GameObject:
   m_ObjectHideFlags: 0
