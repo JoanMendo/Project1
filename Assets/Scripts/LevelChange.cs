@@ -21,7 +21,6 @@ public class LevelChange : MonoBehaviour
 
     public void UpdateInterface()
     {
-        Debug.Log("Eyo");
         playerInterface.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = "Nivel " + level;
     }
 
