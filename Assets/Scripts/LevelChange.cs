@@ -46,7 +46,8 @@ public class LevelChange : MonoBehaviour
         catch (Exception e)
         {
             Debug.Log(e.ToString());
-            ApiRequest.instance.StartCoroutine(ApiRequest.instance.SendPostRequest());
+            // Do not send right now.
+            //ApiRequest.instance.StartCoroutine(ApiRequest.instance.SendPostRequest());
         }
     }
 
