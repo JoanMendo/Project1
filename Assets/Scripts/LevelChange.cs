@@ -20,10 +20,15 @@ public class LevelChange : MonoBehaviour
 
     public void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Personaje");
-        playerInterface = GameObject.FindGameObjectWithTag("Interface").GetComponent<Canvas>();
+        player = GameObject.FindWithTag("Personaje");
 
-        UpdateInterface();
+
+        if (level >= 1)
+        {
+            playerInterface = GameObject.FindWithTag("Interface").GetComponent<Canvas>();
+            UpdateInterface();
+        }
+
     }
 
     public void UpdateInterface()
@@ -49,6 +54,7 @@ public class LevelChange : MonoBehaviour
             // Do not send right now.
             //ApiRequest.instance.StartCoroutine(ApiRequest.instance.SendPostRequest());
         }
+
     }
 
     public void checkDaltonism()

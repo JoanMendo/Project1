@@ -11,8 +11,11 @@ public class CharacterMovement : MonoBehaviour
     public GameObject respawnPosition;
     public HealthManager healthManager;
 
+    [SerializeField] private ParticleSystem deathEffect;   
+    
     private float lifeTime = 0.5f;
     private Vector2 movement;
+    private bool isDying = false;
     private float inputX;
     private float inputY;
     private static CharacterMovement instance;
@@ -38,6 +41,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isDying) return;
         inputX = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical");
         movement = new Vector2(inputX, inputY).normalized;
@@ -46,23 +50,22 @@ public class CharacterMovement : MonoBehaviour
         healthManager.ChangeHealthBar(lifeTime);
 
     }
-    public void Die()
+    public IEnumerator Die()
     {
+        isDying = true;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        healthManager.ChangeHealthBar(0);
+        rb.velocity = Vector2.zero;
+        deathEffect.Play();
+        Debug.Log("Dead");
+        yield return new WaitForSeconds(0.5f);
+        isDying = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
         transform.position = respawnPosition.transform.position;
-        StartCoroutine(respawnFreeze());
+
     }
 
     
-
-    public IEnumerator respawnFreeze()
-    {
-
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        yield return new WaitForSeconds(0.5f);
-        rb.constraints = RigidbodyConstraints2D.None;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-    }
-
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -70,13 +73,13 @@ public class CharacterMovement : MonoBehaviour
         healthManager = GameObject.FindGameObjectWithTag("Interface").GetComponent<HealthManager>();
         Debug.Log("Scene loaded");
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn");
-        Die();
+        transform.position = respawnPosition.transform.position;
         GetComponentInChildren<Light2D>().pointLightOuterRadius = 0;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Terrain")
+        if (collision.gameObject.tag == "Terrain" && !isDying)
         {
             lifeTime -= Time.deltaTime;
 
@@ -86,7 +89,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 lifeTime = 0.5f;
                 ApiRequest.instance.deaths[SceneManager.GetActiveScene().buildIndex] += 1;
-                Die();
+                StartCoroutine(Die());
             }
         }
     }
