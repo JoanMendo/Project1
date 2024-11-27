@@ -10,9 +10,13 @@ public class LevelChange : MonoBehaviour
     public Canvas playerInterface;
     public int level;
     public int exit;
-    public static int Protanopia = 0;
-    public static int Deuteranopia = 0;
-    public static int Tritanopia = 0;
+    public static int totalProtanopia = 0;
+    public static int totalDeuteranopia = 0;
+    public static int totalTritanopia = 0;
+    public int Protanopia = 0;
+    public int Deuteranopia = 0;
+    public int Tritanopia = 0;
+
 
     public void Start()
     {
@@ -48,17 +52,10 @@ public class LevelChange : MonoBehaviour
 
     public void checkDaltonism()
     {
-        if (SceneManager.GetActiveScene().name.Contains("Protanopia"))
-        {
-            Protanopia++;
-        }
-        if (SceneManager.GetActiveScene().name.Contains("Deuteranopia"))
-        {
-            Deuteranopia++;
-        }
-        if (SceneManager.GetActiveScene().name.Contains("Tritanopia"))
-        {
-            Tritanopia++;
-        }
+        
+        totalProtanopia += Protanopia;
+        totalDeuteranopia += Deuteranopia;
+        totalTritanopia += Tritanopia;
+
     }
 }
