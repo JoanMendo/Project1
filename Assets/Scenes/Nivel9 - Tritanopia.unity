@@ -10347,6 +10347,7 @@ MonoBehaviour:
   speed: 10
   respawnPosition: {fileID: 1899781679}
   healthManager: {fileID: 0}
+  deathEffect: {fileID: 0}
 --- !u!50 &870710840
 Rigidbody2D:
   serializedVersion: 4
@@ -10639,7 +10640,7 @@ GameObject:
   - component: {fileID: 1081882420}
   - component: {fileID: 1081882419}
   m_Layer: 0
-  m_Name: Salidas
+  m_Name: SalidaDalt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11190,7 +11191,7 @@ GameObject:
   - component: {fileID: 1731088033}
   - component: {fileID: 1731088032}
   m_Layer: 0
-  m_Name: Salidas (1)
+  m_Name: SalidaNormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11349,7 +11350,7 @@ MonoBehaviour:
   exit: 2
   Protanopia: 0
   Deuteranopia: 0
-  Tritanopia: 1
+  Tritanopia: 10
 --- !u!483693784 &1731088036
 TilemapRenderer:
   m_ObjectHideFlags: 0

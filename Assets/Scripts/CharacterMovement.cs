@@ -56,7 +56,7 @@ public class CharacterMovement : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         healthManager.ChangeHealthBar(0);
         rb.velocity = Vector2.zero;
-        deathEffect.Play();
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Debug.Log("Dead");
         yield return new WaitForSeconds(0.5f);
         isDying = false;
