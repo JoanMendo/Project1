@@ -13,6 +13,10 @@ public class ApiRequest : MonoBehaviour
     public float[] times = new float[12];
     public int[] deaths = new int[12];
 
+    public int totalProtanopia = 0;
+    public int totalDeuteranopia = 0;
+    public int totalTritanopia = 0;
+
 
     private void Awake()
     {
