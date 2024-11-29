@@ -39,4 +39,9 @@ public class PauseButtonScript : MonoBehaviour
         PauseButton.SetActive(true);
         Time.timeScale = 1;
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
