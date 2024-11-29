@@ -6,21 +6,36 @@ public class TypewriterEffect : MonoBehaviour
 {
     private float typingSpeed = 0.1f;
     private string firstText = "Diagnostico:";
-    private string secondText = "Acoustic";
+    private string secondText = "Protanopia: ";
+    private string thirdText = "Deuteranopia: ";
+    private string fourthText = "Tritanopia: ";
     public TextMeshProUGUI firstTextObject;
     public TextMeshProUGUI secondTextObject;
+    public TextMeshProUGUI thirdTextObject;
+    public TextMeshProUGUI fourthTextObject;
 
     void Start()
     {
+        GetDiagnosis();
         StartCoroutine(TypeText());
+    }
+
+    private void GetDiagnosis()
+    {
+        ApiRequest apiComponent = GameObject.Find("/Api").GetComponent<ApiRequest>();
+        secondText += (apiComponent.totalProtanopia.ToString() + "%");
+        thirdText += (apiComponent.totalDeuteranopia.ToString() + "%");
+        fourthText += (apiComponent.totalTritanopia.ToString() + "%");
     }
 
     private IEnumerator TypeText()
     {
         yield return new WaitForSeconds(3f);
         yield return StartCoroutine(TypeSingleText(firstTextObject, firstText));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         yield return StartCoroutine(TypeSingleText(secondTextObject, secondText));
+        yield return StartCoroutine(TypeSingleText(thirdTextObject, thirdText));
+        yield return StartCoroutine(TypeSingleText(fourthTextObject, fourthText));
     }
 
     private IEnumerator TypeSingleText(TextMeshProUGUI textObject, string textToType)
