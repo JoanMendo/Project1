@@ -10,6 +10,7 @@ public class CanvasInicial : MonoBehaviour
 
     private int Gender;
     private bool Age;
+    public GameObject wasd;
     public GameObject levelInterface;
     public GameObject PlayButton;
     public GameObject Inputs;
@@ -53,6 +54,7 @@ public class CanvasInicial : MonoBehaviour
             light2D.SetActive(false);
             Inputs.SetActive(false);
             botonPause.SetActive(true);
+            wasd.SetActive(true);
             StartCoroutine(SetPlayerActive());
         }
 

@@ -56,9 +56,11 @@ public class CharacterMovement : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         healthManager.ChangeHealthBar(0);
         rb.velocity = Vector2.zero;
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Debug.Log("Dead");
+
+        deathEffect.Play();
+        
         yield return new WaitForSeconds(0.5f);
+        
         isDying = false;
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         transform.position = respawnPosition.transform.position;
@@ -71,7 +73,6 @@ public class CharacterMovement : MonoBehaviour
     {
         lifeTime = 0.5f;
         healthManager = GameObject.FindGameObjectWithTag("Interface").GetComponent<HealthManager>();
-        Debug.Log("Scene loaded");
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn");
         transform.position = respawnPosition.transform.position;
         GetComponentInChildren<Light2D>().pointLightOuterRadius = 0;
