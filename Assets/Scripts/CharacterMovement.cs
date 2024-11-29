@@ -10,6 +10,9 @@ public class CharacterMovement : MonoBehaviour
     public float speed = 5f;
     public GameObject respawnPosition;
     public HealthManager healthManager;
+    public AudioClip deathSound;
+    public AudioClip levelChangeSound;
+    [SerializeField] AudioSource SFXSource;
 
     [SerializeField] private ParticleSystem deathEffect;   
     
@@ -53,6 +56,7 @@ public class CharacterMovement : MonoBehaviour
     public IEnumerator Die()
     {
         isDying = true;
+        SFXSource.PlayOneShot(deathSound);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         healthManager.ChangeHealthBar(0);
         rb.velocity = Vector2.zero;
@@ -76,6 +80,7 @@ public class CharacterMovement : MonoBehaviour
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn");
         transform.position = respawnPosition.transform.position;
         GetComponentInChildren<Light2D>().pointLightOuterRadius = 0;
+        SFXSource.PlayOneShot(levelChangeSound);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
