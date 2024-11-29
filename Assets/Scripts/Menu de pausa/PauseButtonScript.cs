@@ -22,7 +22,7 @@ public class PauseButtonScript : MonoBehaviour
     public void ResetButtonPresed()
     {
         PauseButton.SetActive(false);
-        Destroy(player);
+        player.SetActive(false);
         SceneManager.LoadScene("EscenaInicial");
     }
 
@@ -38,5 +38,10 @@ public class PauseButtonScript : MonoBehaviour
         Canvas.GetComponent<Canvas>().enabled = false;
         PauseButton.SetActive(true);
         Time.timeScale = 1;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
