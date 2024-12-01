@@ -8,17 +8,11 @@ public class PauseButtonScript : MonoBehaviour
     public GameObject Canvas;
     public GameObject PauseButton;
     public GameObject player;
-    // Start is called before the first frame update
     void Start()
     {
-        
+        Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow); // Change FullScreenMode as needed
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void ResetButtonPresed()
     {
         PauseButton.SetActive(false);
