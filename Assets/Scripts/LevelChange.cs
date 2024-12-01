@@ -39,7 +39,7 @@ public class LevelChange : MonoBehaviour
         {
             ApiRequest.instance.times[level] = Time.time;
             ApiRequest.instance.exits[level] = exit;
-            if (exit == 0)
+            if (exit == 2)
             {
                 checkDaltonism();
             }

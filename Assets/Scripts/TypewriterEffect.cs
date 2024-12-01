@@ -14,8 +14,18 @@ public class TypewriterEffect : MonoBehaviour
     public TextMeshProUGUI thirdTextObject;
     public TextMeshProUGUI fourthTextObject;
 
+    // AudioSource to play typing sound
+    public AudioSource typingAudioSource;  // Drag your AudioSource here in the inspector
+    public AudioClip typingSound;          // Assign the typing sound clip in the inspector
+
     void Start()
     {
+        if (typingAudioSource == null)
+        {
+            // Attach AudioSource component to the same GameObject if not assigned
+            typingAudioSource = gameObject.AddComponent<AudioSource>();
+        }
+
         GetDiagnosis();
         StartCoroutine(TypeText());
     }
@@ -45,6 +55,13 @@ public class TypewriterEffect : MonoBehaviour
         {
             currentText += letter;
             textObject.text = currentText;
+
+            // Play the typing sound effect
+            if (typingAudioSource != null && typingSound != null)
+            {
+                typingAudioSource.PlayOneShot(typingSound);
+            }
+
             yield return new WaitForSeconds(typingSpeed);
         }
     }

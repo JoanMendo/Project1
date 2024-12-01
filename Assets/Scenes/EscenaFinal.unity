@@ -6173,6 +6173,8 @@ MonoBehaviour:
   secondTextObject: {fileID: 109040346}
   thirdTextObject: {fileID: 1213602719}
   fourthTextObject: {fileID: 1198070832}
+  typingAudioSource: {fileID: 0}
+  typingSound: {fileID: 8300000, guid: a0008fa16324adf48ae71082d4442875, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
