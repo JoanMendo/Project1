@@ -2741,7 +2741,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262981783}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -12628,6 +12628,9 @@ MonoBehaviour:
   speed: 10
   respawnPosition: {fileID: 1899781679}
   healthManager: {fileID: 0}
+  deathSound: {fileID: 0}
+  levelChangeSound: {fileID: 0}
+  SFXSource: {fileID: 0}
   deathEffect: {fileID: 0}
 --- !u!50 &870710840
 Rigidbody2D:

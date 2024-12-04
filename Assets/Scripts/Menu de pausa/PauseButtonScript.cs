@@ -17,6 +17,7 @@ public class PauseButtonScript : MonoBehaviour
     {
         PauseButton.SetActive(false);
         player.SetActive(false);
+        //Destroy(player);
         SceneManager.LoadScene("EscenaInicial");
     }
 

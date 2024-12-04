@@ -76,7 +76,9 @@ public class CharacterMovement : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         lifeTime = 0.5f;
+
         healthManager = GameObject.FindGameObjectWithTag("Interface").GetComponent<HealthManager>();
+
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn");
         transform.position = respawnPosition.transform.position;
         GetComponentInChildren<Light2D>().pointLightOuterRadius = 0;

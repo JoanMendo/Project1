@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 139967611}
   - component: {fileID: 139967610}
   - component: {fileID: 139967609}
-  - component: {fileID: 139967612}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -191,18 +190,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &139967612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139967608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f138ddb07ccac499846b41e16505e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &216322617
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +917,9 @@ MonoBehaviour:
   speed: 10
   respawnPosition: {fileID: 1899781679}
   healthManager: {fileID: 0}
+  deathSound: {fileID: 0}
+  levelChangeSound: {fileID: 0}
+  SFXSource: {fileID: 0}
   deathEffect: {fileID: 0}
 --- !u!61 &756254755
 BoxCollider2D:
