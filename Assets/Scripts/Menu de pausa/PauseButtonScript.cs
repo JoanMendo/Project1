@@ -11,6 +11,7 @@ public class PauseButtonScript : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow); // Change FullScreenMode as needed
+        player = CharacterMovement.instance.gameObject;
     }
 
     public void ResetButtonPresed()

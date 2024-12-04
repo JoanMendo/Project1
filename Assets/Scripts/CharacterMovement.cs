@@ -21,7 +21,7 @@ public class CharacterMovement : MonoBehaviour
     private bool isDying = false;
     private float inputX;
     private float inputY;
-    private static CharacterMovement instance;
+    public static CharacterMovement instance;
 
     private void Awake()
     {
@@ -38,6 +38,7 @@ public class CharacterMovement : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
         SceneManager.sceneLoaded += OnSceneLoaded;
+        gameObject.SetActive(false);
     }
 
 

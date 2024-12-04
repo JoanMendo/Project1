@@ -65,7 +65,7 @@ public class CanvasInicial : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         levelInterface.GetComponent<Canvas>().enabled = true;
-        Player.SetActive(true);
+        CharacterMovement.instance.gameObject.SetActive(true);
         light2D.GetComponent<Light2D>().pointLightOuterRadius = 0.5f;
         light2D.SetActive(true);
 
