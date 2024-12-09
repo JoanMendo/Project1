@@ -12,3 +12,9 @@ El juego comienza en con una pantalla para introducir el nombre, el género biol
 Después de introducir los datos, se empieza un nivel inicial que servirá como tutorial de lo que se tiene que hacer. Una vez acabado el tutorial, el jugador ha de completar 12 niveles (WASD para moverse), cada uno con su tipo o tipos de daltonismo asignado. Para complicarlo un poco el laberinto estará completamente a oscuras, exceptuando un área alrededor del personaje, y las paredes exteriores restaran vida al personaje. Si la barra de vida del jugador se vacía, el personaje volverá al punto de inicio el nivel.
 
 De los 12 niveles, 4 son de tritanopia, 3 niveles son de protanopia, 3 son de deuteranopia y 2 son de protanopia y deuteranopia.
+
+## API
+
+- Descargar Python 3.x
+- Instalar Flask (pip install flask)
+- Ejecutar el archivo "api.pyc"
